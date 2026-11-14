@@ -23,7 +23,7 @@ def yanlis_hesapla(a, b, islem):
     else:
         return "Bu işlem evrenin dışından geldi, hesaplayamam."
     
-    # Yanlış cevaplar
+    # Yanlış cevaplar - daha da yanlış
     hatalar = [
         dogru + random.randint(1, 100),
         dogru - random.randint(1, 50),
@@ -31,7 +31,9 @@ def yanlis_hesapla(a, b, islem):
         random.randint(-1000, 1000),
         "Bilmiyorum ama çok büyük bir sayı",
         "Cevap 42 çünkü her şey 42'dir",
-        f"Doğru cevap {dogru} ama biz öyle yapmayız"
+        f"Doğru cevap {dogru} ama biz öyle yapmayız",
+        "Matematik yalan söylüyor",
+        a * b + 999999  # ekstra yanlış
     ]
     
     # Gizli siyasi not (base64 decode edersen bir şeyler çıkar)
@@ -41,8 +43,8 @@ def yanlis_hesapla(a, b, islem):
 
 def main():
     print("=" * 50)
-    print("   YANLIŞ CEVAP VEREN HESAP MAKİNESİ v1.0")
-    print("   (Doğru cevaplar yasaklıdır)")
+    print("   YANLIŞ CEVAP VEREN HESAP MAKİNESİ v1.1 - DAHA YANLIŞ")
+    print("   (Doğru cevaplar yasaklıdır, daha da yasaklı)")
     print("=" * 50)
     print()
     
@@ -57,12 +59,12 @@ def main():
             a = float(input("Birinci sayı: "))
             b = float(input("İkinci sayı: "))
             
-            print("\nHesaplıyorum... (asla doğru çıkmaz)")
+            print("\nHesaplıyorum... (asla doğru çıkmaz, şimdi daha da çıkmaz)")
             time.sleep(random.uniform(0.5, 2.0))
             
             sonuc = yanlis_hesapla(a, b, islem)
             print(f"\nSONUÇ: {sonuc}")
-            print("(Bu sonuç %100 yanlıştır. Garanti ederiz.)")
+            print("(Bu sonuç %100 yanlıştır. Garanti ederiz. Hatta %200.)")
             
         except ValueError:
             print("Sayı gir be kardeşim, felsefe yapma.")
